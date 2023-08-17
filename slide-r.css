@@ -1,4 +1,4 @@
-.slide-animation {
+.slide-animation-left {
     animation: slide-r 3s 1;
     opacity: 1 !important;
 }
@@ -18,7 +18,7 @@
 }
 
 .transition {
-    transition: all .8s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 @keyframes slide-r {
@@ -32,10 +32,10 @@
 
 @keyframes slide-l {
     0% {
-        transform: translateX(200%);
+        transform: translateX(100%);
     }
     50% {
-        transform: translateX(20%);
+        transform: translateX(0%);
     }
 }
 

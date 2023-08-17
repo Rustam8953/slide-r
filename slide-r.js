@@ -1,40 +1,14 @@
-class SlideLeft {
-    constructor(selector) {
+class SlideDiemos {
+    constructor(selector, direction) {
         const sliderBlock = typeof selector === 'string' ? document.querySelector(selector) : selector;
 
-        sliderBlock.dataset.styleLeft = 'style-left';
+        const directionAnim = typeof direction === 'string' ? direction : alert('Некорректно')
+
+        sliderBlock.dataset.styleLeft = `style-${directionAnim}`;
 
         slideTrans(sliderBlock)
 
-        const animationName = 'slide-animation'
-
-        observer(animationName, sliderBlock)
-    }
-}
-
-class SlideRight {
-    constructor(selector) {
-        const sliderBlock = typeof selector === 'string' ? document.querySelector(selector) : selector;
-
-        sliderBlock.dataset.styleRight = 'style-right'
-
-        slideTrans(sliderBlock)
-
-        const animationName = 'slide-animation-right'
-
-        observer(animationName, sliderBlock)
-    }
-}
-
-class SlideBottom {
-    constructor(selector) {
-        const sliderBlock = typeof selector === 'string' ? document.querySelector(selector) : selector;
-
-        sliderBlock.dataset.styleBottom = 'style-bottom'
-
-        slideTrans(sliderBlock)
-
-        const animationName = 'slide-animation-bottom'
+        const animationName = `slide-animation-${directionAnim}`;
 
         observer(animationName, sliderBlock)
     }
